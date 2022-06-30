@@ -16,13 +16,9 @@ require 'vendor/autoload.php';
  */
 
 $body = json_decode(file_get_contents('php://input'), true); // Get body as a JSON
-$endpoint = $body["endpoint"];
 $data = $body["data"];
 
-$method = $endpoint["method"];
-
-$dataSize = count($data);
-
+$method = $body["endpoint"]["method"];
 
 $config = \Kafka\ProducerConfig::getInstance();
 $config->setMetadataRefreshIntervalMs(10000);
@@ -33,13 +29,15 @@ $config->setIsAsyn(false);
 $config->setProduceInterval(500);
 $producer = new \Kafka\Producer();
 
+for($i = 0; $i < count($data); $i++) { // Send postback for each element on the data array
+    $payload = $body;
+    $payload["data"] = $data[$i];
+    $payload = json_encode($payload);
 
-
-for($i = 0; $i < $dataSize; $i++) {
     $producer->send([
         [
             'topic' => 'postback', // Topic name already created using apache kafka's console commands.
-            'value' => 'test1....message.', // TODO: Build correct info
+            'value' => $payload,
             'key' => '',
         ],
     ]);
