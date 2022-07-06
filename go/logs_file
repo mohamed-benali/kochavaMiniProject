@@ -1,0 +1,6 @@
+2022/07/07 00:53:16 Send request:  GET   https://api.agify.io/?name=Mohammed
+2022/07/07 00:53:17 Response log - Code:  200  Delivery time:  626.0665ms Body:  {"name":"Mohammed","age":68,"count":50401}
+2022/07/07 00:55:27 Send request:  GET   https://api.agify.io/?name=Ana
+2022/07/07 00:55:28 Response log - Code:  200  Delivery time:  467.5211ms Body:  {"name":"Ana","age":60,"count":256597}
+2022/07/07 01:29:22 Send request:  GET   https://api.agify.io/?name=UNMATCHED
+2022/07/07 01:29:23 Response log - Code:  200  - Delivery time:  679.6969ms  - Body:  {"name":"UNMATCHED","age":68,"count":3}
