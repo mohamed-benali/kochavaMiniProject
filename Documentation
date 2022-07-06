@@ -1,0 +1,10 @@
+- PHP documentation
+    Instructions
+        The main php service is at "ingest.php" file.
+        To change apache kafka's ip modify the constant "BROKER_ADDRESS".
+
+    Configuration:
+        PHP version: 7.4
+
+    Install dependencies:
+        composer require nmred/kafka-php
