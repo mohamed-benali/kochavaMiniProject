@@ -10,6 +10,7 @@ import (
 	"net/url"
 	"regexp"
 	"strings"
+	"time"
 )
 
 const (
@@ -18,6 +19,7 @@ const (
 	GroupID                     = "Group"
 	DEFAULT_UNMATCHED_PARAMETER = "UNMATCHED"
 	RETRY_ATTEMPTS              = 3
+	RETRY_WAIT_TIME             = 1 // In seconds
 )
 
 /**
@@ -99,6 +101,7 @@ func consume() {
 		for !successDeliver && deliverTries < RETRY_ATTEMPTS { // Retry if not delivered and less than RETRY_ATTEMPTS tries
 			deliverTries++
 			successDeliver = sendRequest(method, urlString)
+			time.Sleep(RETRY_WAIT_TIME * time.Second)
 		}
 
 		fmt.Println("received: ", string(msg.Value))
