@@ -1,10 +1,34 @@
 - PHP documentation
     Instructions
-        The main php service is at "ingest.php" file.
+        The main php service is "ingest.php" file.
         To change apache kafka's ip modify the constant "BROKER_ADDRESS".
+        Server logs can be found on XAMPP logs
 
     Configuration:
         PHP version: 7.4
+        XAMPP 3.3.0 to manage the server
 
     Install dependencies:
         composer require nmred/kafka-php
+
+
+- Apache Kafka server
+    Instructions
+        To start the service execute the following commands in the same order (Windows 10).
+            .\zookeeper-server-start.bat ..\..\config\zookeeper.properties
+            .\kafka-server-start.bat ..\..\config\server.properties
+
+    Configuration:
+        Apache Kafka: 3.2.0 (install release from apache kafka web page to use)
+
+- GO documentation
+    Instructions
+        The main go service is "main.go" file.
+        To change configurations such as logs or apache kafka change the constants values
+        Logs can be found on "logs_file"
+
+    Configuration:
+        Golang version: 1.18
+
+    Install dependencies (Dependencies are on the include file):
+        include "github.com/segmentio/kafka-go" // external
