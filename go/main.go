@@ -15,14 +15,17 @@ import (
 )
 
 const (
-	topic                       = "postback"
-	brokerAddress               = "localhost:9092"
-	GroupID                     = "Group"
-	DEFAULT_UNMATCHED_PARAMETER = "UNMATCHED"
-	RETRY_ATTEMPTS              = 3
-	RETRY_WAIT_TIME             = 1 // In seconds
-	LOGS_ACTIVED                = true
-	LOGS_FILE_NAME              = "logs_file"
+	topic         = "postback"       // Topic created on apache kafka server
+	brokerAddress = "localhost:9092" // Apache kafka address
+	GroupID       = "Group"
+
+	DEFAULT_UNMATCHED_PARAMETER = "UNMATCHED" // Default value for unmatched query parameters
+
+	RETRY_ATTEMPTS  = 3
+	RETRY_WAIT_TIME = 1 // In seconds
+
+	LOGS_ACTIVED   = true        // true -> logs activated, false -> logs deactivated
+	LOGS_FILE_NAME = "logs_file" // Logs file name
 )
 
 func setLogger() {
