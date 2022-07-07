@@ -4,3 +4,9 @@
 2022/07/07 00:55:28 Response log - Code:  200  Delivery time:  467.5211ms Body:  {"name":"Ana","age":60,"count":256597}
 2022/07/07 01:29:22 Send request:  GET   https://api.agify.io/?name=UNMATCHED
 2022/07/07 01:29:23 Response log - Code:  200  - Delivery time:  679.6969ms  - Body:  {"name":"UNMATCHED","age":68,"count":3}
+2022/07/07 02:56:20 Send request:  GET   https://api.agify.io/?name=UNMATCHED
+2022/07/07 02:56:21 Response log - Code:  200  - Delivery time:  1.1144122s  - Body:  {"name":"UNMATCHED","age":68,"count":3}
+2022/07/07 02:56:37 Send request:  GET   https://api.agify.io/?name=UNMATCHED
+2022/07/07 02:56:38 Response log - Code:  200  - Delivery time:  172.0532ms  - Body:  {"name":"UNMATCHED","age":68,"count":3}
+2022/07/07 02:56:41 Send request:  GET   https://api.agify.io/?name=Mark
+2022/07/07 02:56:42 Response log - Code:  200  - Delivery time:  203.596ms  - Body:  {"name":"Mark","age":50,"count":119611}
